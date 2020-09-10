@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+}
+@model EjemploNetCoreMostrarMensaje2.Controllers.HomeController
+
+    <br />
+    <br />
+    <a>
+        @if (ViewBag.Message != null)
+        {
+            <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+            </script>
+        }
+
+        @if (TempData["Message"] != null)
+        {
+            @TempData["Message"].ToString();
+        }
+
+    </a>
+    <form  method="post">
+        <table>
+            <td>
+                <button id="btn1" value="BTN1" asp-action="ShowMensaje1" name="BTN1-NAME" type="submit" class="btn btn-primary">
+                    MOSTRAR MENSAJE
+                </button>
+            </td>
+            <td>
+                <button id="btn2"  value="BTN2" name="BTN2-NAME" type="submit"  class="btn btn-primary">
+                    MOSTRAR MENSAJE
+                </button>
+            </td>
+        </table>
+        
+    </form>
+
